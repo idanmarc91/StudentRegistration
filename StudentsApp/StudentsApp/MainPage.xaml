@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:StudentsApp"
+             x:Class="StudentsApp.MainPage">
+
+    <StackLayout>
+        <ActivityIndicator 
+                       IsVisible="False"
+                       IsEnabled="True"
+                       x:Name="syncIndicator"/>
+        <Label Text="Student Registration" 
+           VerticalOptions="Start" 
+           HorizontalOptions="Center" Margin="0,30" FontSize="20" />
+
+        <StackLayout Orientation="Horizontal" Spacing="10">
+
+            <Label Text="Student Name:" VerticalOptions="Center" FontSize="16"/>
+            <Entry x:Name="entry" FontSize="16" HorizontalOptions="FillAndExpand" Placeholder="Jon Doe" />
+
+        </StackLayout>
+
+        <Button Text="Submit" Clicked="OnAdd" />
+
+        <ListView x:Name="students_list" IsPullToRefreshEnabled="true" Refreshing="OnRefresh" >
+
+            <ListView.ItemTemplate>
+
+                <DataTemplate>
+                    <TextCell Text="{Binding studentName}"/>
+                </DataTemplate>
+                
+            </ListView.ItemTemplate>
+            
+        </ListView>
+
+
+    </StackLayout>
+
+</ContentPage>
