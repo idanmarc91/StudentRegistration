@@ -9,17 +9,19 @@
                        IsVisible="False"
                        IsEnabled="True"
                        x:Name="syncIndicator"/>
-        <Label Text="Student Registration" 
-           VerticalOptions="Start" 
-           HorizontalOptions="Center" Margin="0,30" FontSize="20" />
+        <StackLayout BackgroundColor="Bisque">
+            <Label Text="Student Registration" 
+               VerticalOptions="Start" 
+               HorizontalOptions="Center" Margin="0,30" FontSize="20" />
 
-        <StackLayout Orientation="Horizontal" Spacing="10">
+            <StackLayout Orientation="Horizontal" Spacing="10">
 
-            <Label Text="Student Name:" VerticalOptions="Center" FontSize="16"/>
-            <Entry x:Name="entry" FontSize="16" HorizontalOptions="FillAndExpand" Placeholder="Jon Doe" />
+                <Label Text="Student Name:" VerticalOptions="Center" FontSize="16"/>
+                <Entry x:Name="entry" FontSize="16" HorizontalOptions="FillAndExpand" Placeholder="Jon Doe" />
 
+            </StackLayout>
         </StackLayout>
-
+        
         <Button Text="Submit" Clicked="OnAdd" />
 
         <ListView x:Name="students_list" IsPullToRefreshEnabled="true" Refreshing="OnRefresh" >
